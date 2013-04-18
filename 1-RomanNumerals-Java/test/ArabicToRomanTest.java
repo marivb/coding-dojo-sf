@@ -59,4 +59,18 @@ public class ArabicToRomanTest {
         assertThat(ArabicToRoman.convert(101), is("CI"));
     }
 
+    @Test
+    public void shouldConvert24ToXXIV() throws Exception {
+        assertThat(ArabicToRoman.convert(24), is("XXIV"));
+    }
+
+    @Test
+    public void shouldConvert50ToL() throws Exception {
+        assertThat(ArabicToRoman.convert(50), is("L"));
+    }
+
+    @Test
+    public void shouldConvert40ToXL() throws Exception {
+        assertThat(ArabicToRoman.convert(40), is("XL"));
+    }
 }
