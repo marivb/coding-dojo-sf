@@ -6,6 +6,17 @@ public class Board {
 
 
    public String print() {
-      return "*";
+      return "++++++++++++\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "+          +\n" +
+             "++++++++++++\n";
    }
 }

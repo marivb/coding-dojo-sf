@@ -8,9 +8,40 @@ public class BoardTest {
 
 
    @Test
-   public void printBoard(){
+   public void shouldDisplayEmptyBoard(){
       Board b = new Board();
-      assertThat(b.print(), is("*"));
+      final String display =  "++++++++++++\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "+          +\n" +
+                              "++++++++++++\n";
+      assertThat(b.print(), is(display));
+   }
+
+   @Test
+   public void shouldPlacePacManOnBoard(){
+      Board b = new Board();
+      final String display =  "++++++++++++\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "++++++++++++\n";
+      assertThat(b.print(), is(display));
+
    }
 
 
