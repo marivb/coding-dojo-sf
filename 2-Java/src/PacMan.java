@@ -1,10 +1,12 @@
 public class PacMan {
    private int x;
    private int y;
+   private Direction direction;
 
    public PacMan(int x, int y) {
       this.x = x;
       this.y = y;
+      this.direction = Direction.EAST;
    }
 
    public int getX() {
@@ -12,7 +14,11 @@ public class PacMan {
    }
 
    public void move() {
-      x++;
+      if (direction.equals(Direction.NORTH)) {
+         y--;
+      } else {
+         x++;
+      }
    }
 
    public int getY() {
@@ -20,6 +26,10 @@ public class PacMan {
    }
 
    public Direction getDirection() {
-      return Direction.EAST;
+      return direction;
+   }
+
+   public void setDirection(Direction direction) {
+      this.direction = direction;
    }
 }

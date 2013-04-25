@@ -1,3 +1,3 @@
 public enum Direction {
-   EAST
+   NORTH, EAST
 }
