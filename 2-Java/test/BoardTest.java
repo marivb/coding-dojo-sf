@@ -28,12 +28,13 @@ public class BoardTest {
    @Test
    public void shouldPlacePacManOnBoard(){
       Board b = new Board();
+      b.pacMan(4,4);
       final String display =  "++++++++++++\n" +
             "+          +\n" +
             "+          +\n" +
             "+          +\n" +
             "+          +\n" +
-            "+          +\n" +
+            "+    @     +\n" +
             "+          +\n" +
             "+          +\n" +
             "+          +\n" +
@@ -42,6 +43,25 @@ public class BoardTest {
             "++++++++++++\n";
       assertThat(b.print(), is(display));
 
+   }
+   @Test
+   public void shouldPlaceFoodOnBoard(){
+      Board b = new Board();
+      b.pacMan(4,4);
+      b.food(4,5);
+      final String display =  "++++++++++++\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+    @.    +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "++++++++++++\n";
+      assertThat(b.print(), is(display));
    }
 
 
