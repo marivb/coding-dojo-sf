@@ -15,7 +15,7 @@ public class GameTest {
                               "+          +\n" +
                               "+          +\n" +
                               "+          +\n" +
-                              "+          +\n" +
+                              "+    @     +\n" +
                               "+          +\n" +
                               "+          +\n" +
                               "+          +\n" +
@@ -67,7 +67,7 @@ public class GameTest {
    @Test
    public void shouldMovePacManOnEveryTic(){
       Game b = new Game();
-      b.pacMan(4,4);
+      b.pacMan(4, 4);
       b.tic();
       final String display =  "++++++++++++\n" +
             "+          +\n" +
@@ -82,6 +82,19 @@ public class GameTest {
             "+          +\n" +
             "++++++++++++\n";
       assertThat(b.print(), is(display));
+   }
+
+   @Test
+   public void gameIsFinishedWhenEmpty(){
+      Game game = new Game();
+      assertThat(game.isFinished(), is(true));
+   }
+
+   @Test
+   public void gameShouldNotBeFinishedIfThereIsFood(){
+      Game game = new Game();
+      game.food(1,1);
+      assertThat(game.isFinished(), is(false));
    }
 
 }

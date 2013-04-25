@@ -5,7 +5,7 @@ public class Game {
    private PacMan pacMan;
 
    public Game() {
-      this.pacMan = new PacMan(-1,-1);
+      this.pacMan = new PacMan(4, 4);
       for (int i = 0; i < SIZE; i++) {
          for (int j = 0; j < SIZE; j++) {
             board[i][j] = " ";
@@ -45,5 +45,17 @@ public class Game {
 
    public void tic() {
       this.pacMan.move();
+   }
+
+   public boolean isFinished() {
+      for (int x = 0; x < SIZE; x++) {
+         for (int y = 0; y < SIZE; y++) {
+            if (board[x][y].equals(".")) {
+               return false;
+
+            }
+         }
+      }
+      return true;
    }
 }
