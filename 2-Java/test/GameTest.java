@@ -64,4 +64,24 @@ public class GameTest {
       assertThat(b.print(), is(display));
    }
 
+   @Test
+   public void shouldMovePacManOnEveryTic(){
+      Game b = new Game();
+      b.pacMan(4,4);
+      b.tic();
+      final String display =  "++++++++++++\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+     @    +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "+          +\n" +
+            "++++++++++++\n";
+      assertThat(b.print(), is(display));
+   }
+
 }

@@ -45,11 +45,4 @@ public class PacManTest {
       assertThat(pacMan.getY(), is(5));
    }
 
-   @Test
-   public void shouldMoveInTheRightDirection(){
-      pacMan.setDirection(Direction.NORTH);
-      pacMan.move();
-      assertThat(pacMan.getX(), is(5));
-      assertThat(pacMan.getY(), is(5));
-   }
 }
