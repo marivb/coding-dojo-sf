@@ -64,6 +64,11 @@ public class BoardTest {
       assertThat(b.print(), is(display));
    }
 
+   @Test
+   public void pacCanEat(){
+
+   }
+
 
 
 }
