@@ -1,14 +1,13 @@
-public class Board {
+public class Game {
 
    public static final int SIZE = 10;
-   private int pacX = -1;
-   private int pacY = -1;
-   private String[][] grid = new String[SIZE][SIZE];
+   private String[][] board = new String[SIZE][SIZE];
+   private PacMan pacman;
 
-   public Board() {
+   public Game() {
       for (int i = 0; i < SIZE; i++) {
          for (int j = 0; j < SIZE; j++) {
-            grid[i][j] = " ";
+            board[i][j] = " ";
          }
       }
    }
@@ -21,7 +20,7 @@ public class Board {
       for (int i = 0; i < SIZE; i++) {
          s.append("+");
          for (int j = 0; j < SIZE; j++) {
-            s.append(grid[i][j]);
+            s.append(board[i][j]);
          }
          s.append("+\n");
       }
@@ -32,12 +31,11 @@ public class Board {
    }
 
    public void pacMan(int x, int y) {
-      this.pacX = x;
-      this.pacY = y;
-      this.grid[x][y] = "@";
+      this.pacman = new PacMan(x, y);
+      this.board[x][y] = "@";
    }
 
    public void food(int x, int y) {
-      this.grid[x][y] = ".";
+      this.board[x][y] = ".";
    }
 }

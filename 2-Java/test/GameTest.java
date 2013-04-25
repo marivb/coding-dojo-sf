@@ -3,13 +3,13 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class BoardTest {
+public class GameTest {
 
 
 
    @Test
    public void shouldDisplayEmptyBoard(){
-      Board b = new Board();
+      Game b = new Game();
       final String display =  "++++++++++++\n" +
                               "+          +\n" +
                               "+          +\n" +
@@ -27,7 +27,7 @@ public class BoardTest {
 
    @Test
    public void shouldPlacePacManOnBoard(){
-      Board b = new Board();
+      Game b = new Game();
       b.pacMan(4,4);
       final String display =  "++++++++++++\n" +
             "+          +\n" +
@@ -46,7 +46,7 @@ public class BoardTest {
    }
    @Test
    public void shouldPlaceFoodOnBoard(){
-      Board b = new Board();
+      Game b = new Game();
       b.pacMan(4,4);
       b.food(4,5);
       final String display =  "++++++++++++\n" +
@@ -63,12 +63,5 @@ public class BoardTest {
             "++++++++++++\n";
       assertThat(b.print(), is(display));
    }
-
-   @Test
-   public void pacCanEat(){
-
-   }
-
-
 
 }
