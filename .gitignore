@@ -1,0 +1,7 @@
+**/.idea/**/**
+**/out/**
+**/*.iml
+**/*.iml/
+2-Java/.idea
+3-OCR/.idea
+1-RomanNumeral-Java/.idea
