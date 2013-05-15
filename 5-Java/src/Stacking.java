@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Stacking {
    private final int numberOfBlocks;
 
@@ -15,6 +13,13 @@ public class Stacking {
    String[] blocks;
 
    public String printState() {
-      return Arrays.toString(blocks);
+      StringBuilder stringBuilder = new StringBuilder();
+      for (int i = 0; i < numberOfBlocks; i++) {
+         if (blocks[i] == null) {
+            stringBuilder.append(i + ": " + i + "\n");
+
+         }
+      }
+      return stringBuilder.toString();
    }
 }
