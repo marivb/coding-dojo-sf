@@ -37,5 +37,12 @@ public class StackingTest {
       assertThat(stacking.printState(), is("0: 0\n1: \n2: 2 1\n"));
 
    }
+   @Test
+   public void moveAllBlocksOntoZero(){
+      Stacking stacking = new Stacking(3);
+      stacking.moveOnto(1, 0);
+      stacking.moveOnto(2, 0);
+      assertThat(stacking.printState(), is("0: 0 2\n1: 1\n2: \n"));
+   }
 
 }

@@ -22,7 +22,8 @@ public class Stacking {
    }
 
    public void moveOnto(int source, int target) {
-      blocks.set(1, target+"");
-      blocks.set(2, "");
+
+      blocks.set(target, target+" "+source);
+      blocks.set(source, "");
    }
 }
