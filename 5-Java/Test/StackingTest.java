@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -24,11 +23,19 @@ public class StackingTest {
       assertThat(s.printState(), is("0: 0\n1: 1\n2: 2\n"));
    }
 
-   @Test @Ignore
+   @Test
    public void moveBlockTwoOntoOne(){
       Stacking stacking = new Stacking(3);
       stacking.moveOnto(2, 1);
-      assertThat(stacking.printState(), is("0: \n1: 1 2\n2: \n"));
+      assertThat(stacking.printState(), is("0: 0\n1: 1 2\n2: \n"));
+   }
+
+   @Test
+   public void moveBlockOneOntoTwo(){
+      Stacking stacking = new Stacking(3);
+      stacking.moveOnto(1, 2);
+      assertThat(stacking.printState(), is("0: 0\n1: \n2: 2 1\n"));
+
    }
 
 }
