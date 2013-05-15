@@ -50,7 +50,20 @@ public class StackingTest {
       Stacking stacking = new Stacking(3);
       stacking.moveOnto(1, 0);
       stacking.moveOnto(1, 2);
-      assertThat(stacking.printState(), is("0: 0 \n1: \n2: 2 1\n"));
+      assertThat(stacking.printState(), is("0: 0\n1: \n2: 2 1\n"));
    }
+
+   @Test
+   public void removeLastBlock(){
+      Stacking stacking = new Stacking(3);
+      assertThat(stacking.removeLastBlockFrom("1 2 3"), is("1 2"));
+   }
+   @Test
+   public void removeLastBlockWhenLastBlock(){
+      Stacking stacking = new Stacking(3);
+      assertThat(stacking.removeLastBlockFrom("1"), is(""));
+   }
+
+
 
 }

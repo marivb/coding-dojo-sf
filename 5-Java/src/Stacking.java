@@ -24,14 +24,27 @@ public class Stacking {
    // 1 0
    // 2 1
    public void moveOnto(int sourceBlock, int targetBlock) {
-      String sourceString = blocks.get(columnOf(sourceBlock)); // 2
-      String targetString = blocks.get(columnOf(targetBlock)); // "0 1"
-      blocks.set(columnOf(targetBlock), targetString + " " + sourceString); //want 0 1 2
-      blocks.set(columnOf(sourceBlock), "");                   // ''
+      int initialColumnOfSourceBlock = columnOf(sourceBlock);
+      String blocksInSourcesColumn = blocks.get(initialColumnOfSourceBlock); // 2
+      String blocksInTargetsColumn = blocks.get(columnOf(targetBlock)); // "0 1"
+      blocks.set(columnOf(targetBlock), blocksInTargetsColumn + " " + sourceBlock); //want 0 1 2
+      blocks.set(initialColumnOfSourceBlock, removeLastBlockFrom(blocksInSourcesColumn));                   // ''
+   }
+
+   public String removeLastBlockFrom(String blocksInSourcesColumn) {
+       if (blocksInSourcesColumn.length() < 2) {
+          return "";
+       }
+       return blocksInSourcesColumn.substring(0, blocksInSourcesColumn.length()-2) ;
+
    }
    // 0: "0 1"
    // 1: ""
    // 2: "2"
+
+   // 0: "0"
+   // 1: ""
+   // 2: "2 1"
 
    private int columnOf(int blockNumberToFind) {
       for(int i = 0; i < numberOfBlocks; i++) {
