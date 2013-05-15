@@ -24,13 +24,20 @@ public class Stacking {
    // 1 0
    // 2 1
    public void moveOnto(int sourceBlock, int targetBlock) {
-      String sourceString = blocks.get(columnOf(sourceBlock)); // 1
-      String targetString = blocks.get(targetBlock); // 0
-      blocks.set(targetBlock, targetString + " " + sourceString); //want 0 1
-      blocks.set(sourceBlock, "");                   // ''
+      String sourceString = blocks.get(columnOf(sourceBlock)); // 2
+      String targetString = blocks.get(columnOf(targetBlock)); // "0 1"
+      blocks.set(columnOf(targetBlock), targetString + " " + sourceString); //want 0 1 2
+      blocks.set(columnOf(sourceBlock), "");                   // ''
    }
+   // 0: "0 1"
+   // 1: ""
+   // 2: "2"
 
    private int columnOf(int blockNumberToFind) {
-      return blockNumberToFind;
+      for(int i = 0; i < numberOfBlocks; i++) {
+         if (blocks.get(i).contains(blockNumberToFind+ ""))
+            return i;
+      }
+      return -1;
    }
 }
