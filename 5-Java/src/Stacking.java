@@ -21,9 +21,16 @@ public class Stacking {
       return stringBuilder.toString();
    }
 
-   public void moveOnto(int source, int target) {
+   // 1 0
+   // 2 1
+   public void moveOnto(int sourceBlock, int targetBlock) {
+      String sourceString = blocks.get(columnOf(sourceBlock)); // 1
+      String targetString = blocks.get(targetBlock); // 0
+      blocks.set(targetBlock, targetString + " " + sourceString); //want 0 1
+      blocks.set(sourceBlock, "");                   // ''
+   }
 
-      blocks.set(target, target+" "+source);
-      blocks.set(source, "");
+   private int columnOf(int blockNumberToFind) {
+      return blockNumberToFind;
    }
 }
