@@ -32,11 +32,7 @@ public class Stacking {
    }
 
    public String removeLastBlockFrom(String blocksInSourcesColumn) {
-       if (blocksInSourcesColumn.length() < 2) {
-          return "";
-       }
-       return blocksInSourcesColumn.substring(0, blocksInSourcesColumn.length()-2) ;
-
+       return blocksInSourcesColumn.substring(0, blocksInSourcesColumn.length() - 1).trim();
    }
    // 0: "0 1"
    // 1: ""
